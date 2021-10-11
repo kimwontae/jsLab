@@ -7,18 +7,23 @@
 <script type="text/javascript">
 //<![CDATA[
 $(function(){
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ $("#member").on("submit", function(){
+	 var d= $(this).serialize();
+	 alert(d)
+	 
+	 
+	 $.ajax({
+		 url: "welcome.jsp",
+		 type: "post",
+		 data : d,
+		 success: function(result){
+			 $("#txt1").html(result);
+		 }
+	 })
+	 
+	 
+	 return false;
+ });
  
  
 });

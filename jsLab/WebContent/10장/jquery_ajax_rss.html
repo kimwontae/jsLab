@@ -21,7 +21,7 @@ $(function(){
         success: function (data) { //성공적으로 요청했왔을 때...
         	//obj = JSONtoString(data);
             var obj = JSON.stringify(data);
-        	alert(obj);
+        	//alert(obj);
         	
         	$("#news_list").empty(); //<ul>에 하위 요소를 모두 제거합니다.
            //console.log(data.responseData.feed.entries);
@@ -43,7 +43,7 @@ $(function(){
       }); // $.ajax() 메서드에 종료
    }); // 이벤트 on 메서드에 종료
 
-  $("#news_wrap h2 a").eq(0).click(); //최초 첫 번째 탭 버튼을 강제로 클릭시킵니다.
+  $("#news_wrap h2 a").eq(1).click(); //최초 첫 번째 탭 버튼을 강제로 클릭시킵니다.
 });
 </script>
 <style type="text/css">
@@ -86,14 +86,17 @@ margin-bottom:10px;}
 <h1>조선닷컴</h1>
 <div id="news_wrap">
   <h2> <!-- 초기에 첫 번째 버튼에만 class="on"이 포함되어 있습니다. -->
-    <a href="http://myhome.chosun.com/rss/www_section_rss.xml" class="on">
+    <a href="https://www.chosun.com/arc/outboundfeeds/rss/category/entertainments/?outputType=xml" class="on">
   오늘의 주요뉴스</a>
   </h2>
   <h2>
-    <a href="http://www.chosun.com/site/data/rss/ent.xml">엔터테이먼트</a>
+    <a href="https://www.chosun.com/arc/outboundfeeds/rss/category/culture-life/?outputType=xml">엔터테이먼트</a>
   </h2>
   <h2>
-    <a href="http://newsplus.chosun.com/hitdata/xml/se/sports/index.xml">스포츠</a>
+    <a href="https://www.chosun.com/arc/outboundfeeds/rss/category/sports/?outputType=xml">스포츠</a>
+  </h2>
+    <h2>
+    <a href="https://rss.donga.com/total.xml">donga</a>
   </h2>
   <ul id="news_list">
   </ul>
