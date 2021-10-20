@@ -10,7 +10,9 @@ import java.io.IOException;
 public class Cookies {
 
 	private Map<String, Cookie> cookieMap = new java.util.HashMap<String, Cookie>();
-
+    // cookieMap = {"JSESSIONID": "DD42636B5B7C550883EFE0761F11B613",
+	//              "name": "최범균",
+	//             	"id": "madvirus"}
 	public Cookies(HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
@@ -36,6 +38,7 @@ public class Cookies {
 		return cookieMap.get(name) != null;
 	}
 
+	// method overloading
 	public static Cookie createCookie(String name, String value) throws IOException {
 		return new Cookie(name, URLEncoder.encode(value, "utf-8"));
 	}

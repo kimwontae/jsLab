@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!-- header -->
 <%@ include file="/view/include/header.jspf" %>
+
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -38,7 +39,11 @@
         <div class="box-body">
         
         
+        
+        
           Start creating your amazing application!
+          
+          
           
           
           
@@ -55,6 +60,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  
-  <!-- footer -->
+
+
+
 <%@ include file="/view/include/footer.jspf" %>
+
