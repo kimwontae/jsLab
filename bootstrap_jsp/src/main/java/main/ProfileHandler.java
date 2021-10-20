@@ -1,4 +1,4 @@
-package member.command;
+package main;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,13 +7,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import auth.service.User;
+import mvc.command.CommandHandler;
 import member.service.ChangePasswordService;
+import member.service.DuplicateIdException;
+//import member.service.JoinRequest;
+//import member.service.JoinService;
 import member.service.InvalidPasswordException;
 import member.service.MemberNotFoundException;
-import mvc.command.CommandHandler;
 
-public class ChangePasswordHandler implements CommandHandler {
-	private static final String FORM_VIEW = "/WEB-INF/view/changePwdForm.jsp";
+public class ProfileHandler implements CommandHandler {
+
+	private static final String FORM_VIEW = "/WEB-INF/view/main/profile.jsp";
 	private ChangePasswordService changePwdSvc = new ChangePasswordService();
 	
 	@Override
@@ -32,7 +36,6 @@ public class ChangePasswordHandler implements CommandHandler {
 	private String processForm(HttpServletRequest req, HttpServletResponse res) {
 		return FORM_VIEW;
 	}
-
 
 	private String processSubmit(HttpServletRequest req, HttpServletResponse res)
 	throws Exception {
@@ -56,7 +59,7 @@ public class ChangePasswordHandler implements CommandHandler {
 		
 		try {
 			changePwdSvc.changePassword(user.getId(), curPwd, newPwd);
-			return "/WEB-INF/view/changePwdSuccess.jsp";
+			return "/WEB-INF/view/main/changePwdSuccess.jsp";
 		} catch (InvalidPasswordException e) {
 			errors.put("badCurPwd", Boolean.TRUE);
 			return FORM_VIEW;

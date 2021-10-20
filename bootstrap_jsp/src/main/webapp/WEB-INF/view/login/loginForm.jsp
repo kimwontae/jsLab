@@ -74,7 +74,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">비밀번호 분실</a><br>
-    <a href="register.html" class="text-center">회원가입</a>
+    <a href="${pageContext.request.contextPath}/joinForm.do" class="text-center">신회원가입</a>
 
   </div>
   <!-- /.login-box-body -->
